@@ -1,0 +1,45 @@
+/* IMPORT GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700;900&display=swap');
+
+/* IMPORT LOCAL FONT */
+@font-face {
+  font-family: "Panton Rust Heavy Grunge";
+  src:  url('../fonts/pantonrustheavy-grunge-webfont.woff2') format('woff2'),
+        url('../fonts/pantonrustheavy-grunge-webfont.woff') format('woff'),
+        url('../fonts/PantonRustHeavy-Grunge.ttf') format('truetype');
+}
+
+/* RESET STYLES */
+* {
+  color: inherit;
+  margin: 0;
+}
+
+body {
+  background-color: $arsenic;
+  font-family: $font-family-lato;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-rubik;
+  text-transform: uppercase;
+  color: $dark-cerulean;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.splash-container {
+  max-width: 954px;
+  margin: 0 auto;
+}

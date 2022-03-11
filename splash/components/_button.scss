@@ -1,0 +1,64 @@
+/* IMPORT GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+
+/* BUTTON */
+.splash-btn {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: $base-padding $base-padding * 2.5;
+  border-radius: $base-border-radius;
+  text-transform: uppercase;
+  color: $white;
+  font-family: $font-family-rubik;
+  transition: 0.15s ease-in-out;
+}
+
+.dark-lemon-lime {
+  background-color: $dark-lemon-lime;
+
+  &:hover {
+    background-color: $olive-drab;
+  }
+}
+
+.transparent {
+  background-color: transparent;
+  border: $base-border-thickness solid $white;
+  font-size: calc(#{$base-font-size} - 2px);
+  padding-left: $base-padding * 2;
+  padding-right: $base-padding * 2;
+
+  &:hover {
+    color: $dark-gunmetal;
+    background-color: $platinum;
+    border: $base-border-thickness solid $platinum;
+  }
+}
+
+/* MEDIA QUERIES */
+
+/* 576px BREAKPOINT UP */
+@include sm-up {
+  .splash-btn {
+    font-size: calc(#{$base-font-size} + 2px);
+    padding: $base-padding * 1.1 $base-padding * 4.2;
+  }
+
+  .transparent {
+    font-size: calc(#{$base-font-size} - 2px);
+    padding: $base-padding * 1.2 $base-padding * 1.6;
+  }
+}
+
+/* 360px BREAKPOINT DOWN */
+@include breakpoint-down(360px) {
+  .splash-btn {
+    margin-bottom: $base-margin * 2.5;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
