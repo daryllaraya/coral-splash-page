@@ -1,0 +1,421 @@
+@use 'abstracts' as *;
+
+/* HERO BANNER */
+.hero-banner-container {
+  position: relative;
+  height: 390px;
+
+  @include sm-up {
+    height: 538px;
+  }
+
+  /* SAMSUNG GALAXY S SERIES  - LANDSCAPE */
+  @media only screen 
+    and (max-device-width: 915px)
+    and (min-device-height: 360px)
+    and (orientation: landscape)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 515px;
+  }
+
+  /* IPHONE 11 TO 13 PRO MAX  - LANDSCAPE */
+  @media only screen 
+    and (min-device-width: 926px)
+    and (min-device-height: 375px)
+    and (orientation: landscape)
+    and (-webkit-min-device-pixel-ratio: 3) {
+      height: 525px;
+  }
+
+  /* IPHONE 11 TO 13 PRO MAX  - PORTRAIT */
+  @media only screen 
+    and (max-device-width: 428px)
+    and (max-device-height: 926px)
+    and (orientation: portrait)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 445px;
+  }
+
+  /* IPHONE SE - LANDSCAPE */
+  @media only screen 
+    and (device-width: 667px)
+    and (device-height: 375px)
+    and (orientation: landscape)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 390px;
+  }
+
+  /* TABLET 428PX MIN 860PX MAX - PORTRAIT */
+  @media only screen 
+    and (min-device-width: 428px) 
+    and (max-device-width: 860px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 600px;
+  }
+
+  /* SURFACE DUO TABLET - PORTRAIT */
+  @media only screen 
+    and (device-width: 540px) 
+    and (device-height: 720px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 570px;
+  }
+
+  /* SURFACE PRO 7 - PORTRAIT */
+  @media only screen 
+    and (device-width: 912px) 
+    and (device-height: 1368px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 515px;
+  }
+
+  /* GALAXY FOLD - LANDSCAPE */
+  @media only screen 
+    and (device-width: 653px) 
+    and (device-height: 280px)
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+      height: 390px;
+  }
+
+  .hero-banner {
+    background-image: url('/assets/banners/Header_Image_Mobile_v2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    margin-top: $base-margin * 6;
+
+    @include sm-up {
+      background-image: url('/assets/banners/Header_Image_Desktop_v2.jpg');
+      margin-top: $base-margin * 6.37;
+    }
+
+    @include breakpoint-down(360px) {
+      margin-top: $base-margin * 4.7;
+    }
+  }
+  
+  .copy {
+    background-image: url('/assets/banners/Text_Box_Mobile.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: auto;
+    transform: skewY(-15deg);
+    padding: $base-padding * 2.4 $base-padding * 2 $base-padding * 2.6 $base-padding * 2;
+    position: absolute;
+    top: 8%;
+    left: 0;
+
+    @include sm-up {
+      background-image: url('/assets/banners/Text_Box_Desktop.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding: $base-padding * 3.3;
+    }
+
+    /* TABLET 428PX MIN 860PX MAX - PORTRAIT */
+    @media only screen 
+      and (min-device-width: 428px) 
+      and (max-device-width: 860px) 
+      and (orientation: portrait) 
+      and (-webkit-min-device-pixel-ratio: 2) {
+        padding: $base-padding * 3.3;
+    }
+
+    h1, h3 {
+      text-align: left;
+    }
+
+    h1 {
+      font-size: $base-font-size * 3.3;
+      line-height: $base-font-size * 2.9;
+      margin: 0;
+      margin-bottom: calc(#{$base-margin} - 12px);
+
+      @include sm-up {
+        font-size: $base-font-size * 5.5;
+        line-height: $base-font-size * 5;
+      }
+
+      @include breakpoint-down(360px) {
+        font-size: $base-font-size * 2.5;
+        line-height: $base-font-size * 2.2;
+      }
+
+      /* SAMSUNG GALAXY S SERIES  - LANDSCAPE */
+      @media only screen 
+        and (max-device-width: 915px)
+        and (min-device-height: 360px)
+        and (orientation: landscape)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 4.3;
+          line-height: $base-font-size * 3.9;
+      }
+
+      /* IPHONE 11 TO 13 PRO MAX  - LANDSCAPE */
+      @media only screen 
+        and (min-device-width: 926px)
+        and (min-device-height: 375px)
+        and (orientation: landscape)
+        and (-webkit-min-device-pixel-ratio: 3) {
+          font-size: $base-font-size * 4.3;
+          line-height: $base-font-size * 3.9;
+      }
+
+      /* IPHONE SE - LANDSCAPE */
+      @media only screen 
+        and (device-width: 667px)
+        and (device-height: 375px)
+        and (orientation: landscape)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 3.3;
+          line-height: $base-font-size * 2.9;
+      }
+
+      /* TABLET 428PX MIN 860PX MAX - PORTRAIT */
+      @media only screen 
+        and (min-device-width: 428px) 
+        and (max-device-width: 860px) 
+        and (orientation: portrait) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 4.3;
+          line-height: $base-font-size * 3.9;
+      }
+
+      /* SURFACE DUO TABLET - PORTRAIT */
+      @media only screen 
+        and (device-width: 540px) 
+        and (device-height: 720px) 
+        and (orientation: portrait) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 4.3;
+          line-height: $base-font-size * 3.9;
+      }
+
+      /* SURFACE DUO TABLET - LANDSCAPE */
+      @media only screen 
+        and (device-width: 720px) 
+        and (device-height: 540px) 
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 3.3;
+          line-height: $base-font-size * 2.9;
+      }
+
+      /* MOBILE 320PX - LANDSCAPE */
+      @media only screen 
+        and (device-width: 860px) 
+        and (device-height: 320px) 
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 5;
+          line-height: $base-font-size * 4.5;
+      }
+
+      /* GALAXY FOLD - LANDSCAPE */
+      @media only screen 
+        and (device-width: 653px) 
+        and (device-height: 280px)
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 3.3;
+          line-height: $base-font-size * 2.9;
+      }
+    }
+
+    h3 {
+      font-size: $base-font-size * 1.4;
+      line-height: $base-font-size * 1.4;
+
+      @include sm-up {
+        font-size: $base-font-size * 2.2;
+        line-height: $base-font-size * 2.2;
+      }
+
+      @include breakpoint-down(360px) {
+        font-size: $base-font-size;
+        line-height: $base-font-size;
+      }
+
+      /* SAMSUNG GALAXY S SERIES  - LANDSCAPE */
+      @media only screen 
+        and (max-device-width: 915px)
+        and (min-device-height: 360px)
+        and (orientation: landscape)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 1.8;
+          line-height: $base-font-size * 1.8;
+      }
+
+      /* IPHONE 11 TO 13 PRO MAX  - LANDSCAPE */
+      @media only screen 
+        and (min-device-width: 926px)
+        and (min-device-height: 375px)
+        and (orientation: landscape)
+        and (-webkit-min-device-pixel-ratio: 3) {
+          font-size: $base-font-size * 1.8;
+          line-height: $base-font-size * 1.8;
+      }
+
+      /* IPHONE SE - LANDSCAPE */
+      @media only screen 
+        and (device-width: 667px)
+        and (device-height: 375px)
+        and (orientation: landscape)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 1.4;
+          line-height: $base-font-size * 1.4;
+      }
+
+      /* TABLET 428PX MIN 860PX MAX - PORTRAIT */
+      @media only screen 
+        and (min-device-width: 428px) 
+        and (max-device-width: 860px) 
+        and (orientation: portrait) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 1.8;
+          line-height: $base-font-size * 1.8;
+      }
+
+      /* SURFACE DUO TABLET - PORTRAIT */
+      @media only screen 
+        and (device-width: 540px) 
+        and (device-height: 720px) 
+        and (orientation: portrait) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 1.8;
+          line-height: $base-font-size * 1.8;
+      }
+
+      /* SURFACE DUO TABLET - LANDSCAPE */
+      @media only screen 
+        and (device-width: 720px) 
+        and (device-height: 540px) 
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 1.4;
+          line-height: $base-font-size * 1.4;
+      }
+
+      /* MOBILE 320PX - LANDSCAPE */
+      @media only screen 
+        and (device-width: 860px) 
+        and (device-height: 320px) 
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 2;
+          line-height: $base-font-size * 2;
+      }
+
+      /* GALAXY FOLD - LANDSCAPE */
+      @media only screen 
+        and (device-width: 653px) 
+        and (device-height: 280px)
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: $base-font-size * 1.4;
+          line-height: $base-font-size * 1.4;
+      }
+    }
+  }
+  
+  .key-terms {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+
+    @include sm-up {
+      bottom: 10%;
+    }
+  
+    p {
+      color: $white;
+      font-size: calc(#{$base-font-size} - 6px);
+      text-align: center;
+
+      @include sm-up {
+        font-size: calc(#{$base-font-size} - 2px);
+      }
+    }
+  }
+}
+
+.hero-cta-container {
+  background-color: #004779;
+  padding: $base-padding * 1.35 $base-padding $base-padding * 2.5;
+
+  @include sm-up {
+    padding: 0 $base-padding * 2 $base-padding * 4.5;
+    position: relative;
+  }
+
+  h3 {
+    color: $white;
+    font-size: calc(#{$base-font-size} + 4px);
+    line-height: calc(#{$base-font-size} + 8px);
+    text-align: center;
+    text-transform: uppercase;
+
+    @include sm-up {
+      font-size: $base-font-size * 1.8;
+      line-height: calc(#{$base-font-size * 2} + 4px);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -10%;
+    }
+  }
+
+  .hero-cta {
+    display: flex;
+    justify-content: space-around;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: $base-padding * 2;
+    padding-bottom: $base-padding * 2.5;
+
+    @include sm-up {
+      padding-top: $base-padding * 4.3;
+      max-width: 550px;
+    }
+
+    @include breakpoint-down(360px) {
+      flex-direction: column;
+      text-align: center;
+      max-width: 240px;
+      padding-bottom: $base-padding * 1.2;
+    }
+  }
+  
+  .login-cta {
+    text-align: center;
+
+    @include sm-up {
+      padding-top: $base-padding * 1.2;
+    }
+  }
+}
+
+.rg-container {
+  background-color: $lemon-glacier;
+  padding: $base-padding;
+  .rg-img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+
+    @include sm-up {
+      height: 48px;
+    }
+
+    @include md-down {
+      height: 27px;
+    }
+  }
+}

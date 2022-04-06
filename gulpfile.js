@@ -4,7 +4,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const purgecss = require('gulp-purgecss');
 
 function buildStyles() {
-  return src('splash/**/*.scss')
+  return src('sass/**/*.scss')
     .pipe(sass())
     .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
     .pipe(purgecss({ content: ['*.html'] }))
@@ -12,7 +12,7 @@ function buildStyles() {
 }
 
 function watchTask() {
-  watch(['splash/**/*.scss', '*.html'], buildStyles)
+  watch(['sass/**/*.scss', '*.html'], buildStyles)
 }
 
 exports.default = series(buildStyles, watchTask)

@@ -1,0 +1,40 @@
+@use 'abstracts' as *;
+
+/* BASIC TYPOGRAPHY AND COLOR STYLE FOR COPY TEXT */
+body {
+  background-color: $arsenic;
+  font-family: $font-family-lato;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-rubik;
+  text-transform: uppercase;
+  color: $dark-cerulean;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: $base-font-size * 2.5;
+  line-height: $base-font-size * 2.2;
+  font-family: $font-family-panton-rust;
+  margin: $base-margin;
+
+  @include lg-up {
+    font-size: $base-font-size * 4;
+    line-height: $base-font-size * 3.5;
+    margin: 0;
+    margin-bottom: $base-margin * 5;
+  }
+}
+
+h2 {
+  margin-bottom: $base-margin * 2;
+
+  @include lg-up {
+    font-size: calc(#{$base-font-size * 2} + 4px);
+    margin-bottom: $base-margin * 3;
+  }
+}

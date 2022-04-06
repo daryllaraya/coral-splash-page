@@ -1,9 +1,4 @@
-// REMOVED THE DEFAULT HEADER
-.slot-header {
-  header {
-    display: none;
-  }
-}
+@use 'abstracts' as *;
 
 /* HEADER */
 .sticky-header {
@@ -15,8 +10,16 @@
 }
 
 .header {
-  background-color: #004779;
+  background-color: $dark-cerulean;
   padding: $base-padding * 2;
+
+  @include md-up {
+    padding: $base-padding * 1.5;
+  }
+
+  @include breakpoint-down(360px) {
+    padding: $base-padding * 1.3;
+  }
 
   .nav {
     display: flex;
@@ -27,6 +30,15 @@
   .logo {
     width: 132px;
     height: 21px;
+
+    @include md-up {
+      width: 222px;
+      height: 35px;
+    }
+
+    @include breakpoint-down(360px) {
+      width: 80%;
+    }
   }
 
   .login-cta {
@@ -38,6 +50,15 @@
     padding: 6px 8px;
     text-transform: uppercase;
     transition: 0.15s ease-in-out;
+
+    @include md-up {
+      font-size: calc(#{$base-font-size} - 2px);
+      padding: $base-padding * 0.8 $base-padding * 1.3;
+    }
+
+    @include breakpoint-down(360px) {
+      font-size: calc(#{$base-font-size} - 9px);
+    }
 
     &:hover {
       color: $dark-gunmetal;
@@ -51,53 +72,19 @@
   }
 
   .next-icon {
-    width: 5px;
+    width: 8px;
     height: 8px;
     padding-left: 3px;
     fill: $white;
-  }
-}
 
-/* MEDIA QUERIES */
-
-/* 768px BREAKPOINT UP */
-@include md-up {
-  .header {
-    padding: $base-padding * 1.5;
-
-    .logo {
-      width: 222px;
-      height: 35px;
-    }
-
-    .login-cta {
-      font-size: calc(#{$base-font-size} - 2px);
-      padding: $base-padding * 0.8 $base-padding * 1.3;
-    }
-
-    .next-icon {
-      width: 8px;
-      height: 10px;
+    @include md-up {
+      width: 15px;
+      height: 11px;
       padding-left: calc(#{$base-padding} - 4px);
     }
-  }
-}
 
-/* 360px BREAKPOINT DOWN */
-@include breakpoint-down(360px) {
-  .header {
-    padding: $base-padding * 1.3;
-
-    .logo {
-      width: 80%;
-    }
-
-    .login-cta {
-      font-size: calc(#{$base-font-size} - 9px);
-    }
-
-    .next-icon {
-      width: 3px;
+    @include breakpoint-down(360px) {
+      width: 7px;
       height: 5px;
     }
   }

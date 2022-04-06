@@ -1,0 +1,16 @@
+@use 'abstracts' as *;
+
+/* CONTAINER */
+.splash-container {
+  max-width: 954px;
+  margin: 0 auto;
+}
+
+.sports, .casino {
+  background-color: $white;
+  padding: $base-padding * 1.5 $base-padding * 2 $base-padding * 1.5;
+
+  @include lg-up {
+    padding: $base-padding * 6 $base-padding * 3.35 $base-padding * 3.5;
+  }
+}

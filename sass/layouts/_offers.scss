@@ -1,0 +1,129 @@
+@use 'abstracts' as *;
+
+/* OFFERS */
+.sports, .casino {
+  .offers {
+    @include lg-up {
+      margin-top: $base-margin * 3;
+      margin-bottom: $base-margin * 3;
+    }
+  }
+
+  .img-1, .img-2, .img-3, .img-4 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+  
+    @include sm-up {
+      flex-basis: 40%;
+    }
+  }
+}
+
+.details {
+  padding: $base-padding * 1.7 $base-padding * 1.5;
+  text-align: center;
+
+  @include lg-up {
+    padding-left: $base-padding * 2;
+    padding-right: $base-padding * 2;
+  }
+
+  @include sm-up {
+    flex-basis: 60%;
+    text-align: left;
+  }
+
+  p, h2, h3 {
+    color: $white;
+    text-transform: uppercase;
+  }
+
+  h2, h3 {
+    font-family: $font-family-panton-rust;
+  }
+
+  p {
+    font-family: $font-family-rubik;
+    font-size: $base-font-size;
+    line-height: $base-font-size * 1.2;
+    margin-bottom: calc(#{$base-margin} - 8px);
+  }
+
+  h2 {
+    font-size: $base-font-size * 2;
+    line-height: $base-font-size * 1.9;
+    margin-bottom: calc(#{$base-margin} - 10px);
+
+    @include lg-up {
+      font-size: calc(#{$base-font-size * 2} + 4px);
+      line-height: calc(#{$base-font-size * 2} + 2px);
+      margin-bottom: calc(#{$base-margin} - 7px);
+    }
+
+    @include sm-up {
+      text-align: left;
+    }
+  }
+
+  h3 {
+    font-size: $base-font-size * 1.2;
+    line-height: $base-font-size * 1.5;
+
+    @include lg-up {
+      font-size: calc(#{$base-font-size} + 8px);
+    }
+  }
+
+  .key-terms {
+    display: block;
+    color: $white;
+    font-size: calc(#{$base-font-size} - 7px);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-top: $base-margin * 1.1;
+
+    @include lg-up {
+      font-size: calc(#{$base-font-size} - 6px);
+      margin-top: $base-padding * 2.5;
+    }
+
+    &:hover {
+      color: darken($white, 15);
+    }
+  }
+}
+
+.sports-offer, .casino-offer {
+  img {
+    height: 250px;
+    width: 100%;
+    display: block;
+
+    @include lg-up {
+      height: auto;
+    }
+
+    @include sm-up {
+      height: auto;
+    }
+  }
+}
+
+.show-mobile {
+  @include lg-up {
+    display: none;
+  }
+}
+
+.show-desktop {
+  @include md-up {
+    display: block;
+  }
+
+  @include lg-down {
+    display: none;
+  }
+}

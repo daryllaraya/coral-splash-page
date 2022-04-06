@@ -1,0 +1,143 @@
+@use 'abstracts' as *;
+
+/* MARKETS */
+.markets-container {
+  margin-top: $base-margin * 3;
+  margin-bottom: $base-margin * 1.1;
+
+  @include lg-up {
+    margin-top: $base-margin * 8;
+    margin-bottom: 0;
+  }
+}
+
+.markets {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  p {
+    color: $dark-cerulean;
+    text-align: center;
+
+    @include lg-up {
+      font-size: calc(#{$base-font-size} + 2px);
+    }
+  }
+}
+
+.sports, .casino {
+  .item {
+    @include item;
+
+    @include lg-up {
+      margin-bottom: $base-margin * 4;
+    }
+
+    p {
+      @include lg-up {
+        font-size: calc(#{$base-font-size} + 2px);
+        margin-top: $base-margin;
+      }
+    }
+
+    a {
+      display: block;
+    }
+  
+    .football-icon, .rugby-icon, .darts-icon, .american-football, .basketball, .tennis, .casino-icon, .bingo-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .football-icon, .darts-icon, .basketball, .casino-icon, .bingo-icon {
+      @include lg-up {
+        width: 79px;
+        height: 79px;
+      }
+    }
+
+    .rugby-icon, .american-football {
+      @include lg-up {
+        width: 81px;
+        height: 80px;
+      }
+    }
+
+    .tennis {
+      @include lg-up {
+        width: 80px;
+        height: 79px;
+      }
+    }
+  
+    .golf-icon {
+      width: 36px;
+      height: 40px;
+
+      @include lg-up {
+        width: 70px;
+        height: 80px;
+      }
+    }
+  
+    .boxing-icon {
+      width: 45px;
+      height: 40px;
+
+      @include lg-up {
+        width: 89px;
+        height: 79px;
+      }
+    }
+
+    .gaming-icon, .slots-icon {
+      width: 42px;
+      height: 40px;
+    }
+
+    .gaming-icon {
+      @include lg-up {
+        width: 83px;
+        height: 79px;
+      }
+    }
+
+    .slots-icon {
+      @include lg-up {
+        width: 81px;
+        height: 79px;
+      }
+    }
+
+    .livecasino-icon {
+      width: 26px;
+      height: 40px;
+
+      @include lg-up {
+        width: 50px;
+        height: 79px;
+      }
+    }
+
+    .poker-icon {
+      width: 37px;
+      height: 40px;
+
+      @include lg-up {
+        width: 72px;
+        height: 79px;
+      }
+    }
+  }
+}
+
+.casino {
+  .item {
+    &:nth-child(5), &:nth-child(6) {
+      @include lg-up {
+        margin-bottom: $base-margin;
+      }
+    }
+  }
+}

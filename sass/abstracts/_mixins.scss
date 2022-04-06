@@ -1,0 +1,31 @@
+@use 'abstracts/variables' as *;
+@use 'abstracts/breakpoints' as *;
+
+// MIXINS
+// OFFERS
+@mixin offers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark-cerulean;
+  border-radius: $base-border-radius;
+  margin-top: $base-margin * 2;
+  margin-bottom: $base-margin * 2;
+  overflow: hidden;
+
+  @include sm-up {
+    flex-direction: row;
+  }
+}
+
+// ITEM
+@mixin item {
+  flex-basis: calc(100% / 4);
+  margin-bottom: $base-margin * 2;
+  text-align: center;
+
+  p {
+    color: $dark-cerulean;
+    font-size: calc(#{$base-font-size} - 4px);
+  }
+}

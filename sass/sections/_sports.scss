@@ -1,0 +1,23 @@
+@use 'abstracts' as *;
+
+/* SPORTS */
+.sports {
+  .offers {
+    @include offers;
+  }
+  .img-1 {
+    background-image: url('/assets/sports/FSS.jpg');
+  }
+  
+  .img-2 {
+    background-image: url('/assets/sports/RSS.jpg');
+  }
+  
+  .img-3 {
+    background-image: url('/assets/sports/BYB.jpg');
+  }
+  
+  .img-4 {
+    background-image: url('/assets/sports/FTF.jpg');
+  }
+}

@@ -8,38 +8,3 @@
         url('../fonts/pantonrustheavy-grunge-webfont.woff') format('woff'),
         url('../fonts/PantonRustHeavy-Grunge.ttf') format('truetype');
 }
-
-/* RESET STYLES */
-* {
-  color: inherit;
-  margin: 0;
-}
-
-body {
-  background-color: $arsenic;
-  font-family: $font-family-lato;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-rubik;
-  text-transform: uppercase;
-  color: $dark-cerulean;
-}
-
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-.splash-container {
-  max-width: 954px;
-  margin: 0 auto;
-}

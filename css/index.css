@@ -1,17 +1,32 @@
 /* IMPORT GOOGLE FONT */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@700;900&display=swap");
+/* RESET STYLES */
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
 /* IMPORT LOCAL FONT */
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap");
 @font-face {
   font-family: "Panton Rust Heavy Grunge";
   src: url("../fonts/pantonrustheavy-grunge-webfont.woff2") format("woff2"), url("../fonts/pantonrustheavy-grunge-webfont.woff") format("woff"), url("../fonts/PantonRustHeavy-Grunge.ttf") format("truetype");
 }
-/* RESET STYLES */
-* {
-  color: inherit;
-  margin: 0;
-}
-
+/* BASIC TYPOGRAPHY AND COLOR STYLE FOR COPY TEXT */
 body {
   background-color: #414141;
   font-family: Lato, -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
@@ -23,404 +38,51 @@ h1, h2, h3 {
   color: #004779;
 }
 
-a {
-  text-decoration: none;
+h1, h2 {
+  text-align: center;
 }
 
-img {
-  max-width: 100%;
+h1 {
+  font-size: 2.5rem;
+  line-height: 2.2rem;
+  font-family: "Panton Rust Heavy Grunge", sans-serif;
+  margin: 0.75rem;
+}
+@media (min-width: 992px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 3.5rem;
+    margin: 0;
+    margin-bottom: 3.75rem;
+  }
 }
 
+h2 {
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 992px) {
+  h2 {
+    font-size: calc(2rem + 4px);
+    margin-bottom: 2.25rem;
+  }
+}
+
+/* CONTAINER */
 .splash-container {
   max-width: 954px;
   margin: 0 auto;
 }
 
-/* HEADER */
-.sticky-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
-  z-index: 999;
+.sports, .casino {
+  background-color: #fff;
+  padding: 1.125rem 1.5rem 1.125rem;
+}
+@media (min-width: 992px) {
+  .sports, .casino {
+    padding: 4.5rem 2.5125rem 2.625rem;
+  }
 }
 
-.header {
-  background-color: #004779;
-  padding: 1.5rem;
-}
-.header .nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.header .logo {
-  width: 132px;
-  height: 21px;
-}
-.header .login-cta {
-  color: #fff;
-  font-size: calc(1rem - 6px);
-  border: 1px solid #fff;
-  border-radius: 5px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 6px 8px;
-  text-transform: uppercase;
-  -webkit-transition: 0.15s ease-in-out;
-  transition: 0.15s ease-in-out;
-}
-.header .login-cta:hover {
-  color: #212529;
-  background-color: #E2E6EA;
-  border: 1px solid #E2E6EA;
-}
-.header .login-cta:hover .next-icon {
-  fill: #212529;
-}
-.header .next-icon {
-  width: 5px;
-  height: 8px;
-  padding-left: 3px;
-  fill: #fff;
-}
-
-/* MEDIA QUERIES */
-/* 768px BREAKPOINT UP */
-@media (min-width: 768px) {
-  .header {
-    padding: 1.125rem;
-  }
-  .header .logo {
-    width: 222px;
-    height: 35px;
-  }
-  .header .login-cta {
-    font-size: calc(1rem - 2px);
-    padding: 0.6rem 0.975rem;
-  }
-  .header .next-icon {
-    width: 8px;
-    height: 10px;
-    padding-left: calc(0.75rem - 4px);
-  }
-}
-/* 360px BREAKPOINT DOWN */
-@media (max-width: 360px) {
-  .header {
-    padding: 0.975rem;
-  }
-  .header .logo {
-    width: 80%;
-  }
-  .header .login-cta {
-    font-size: calc(1rem - 9px);
-  }
-  .header .next-icon {
-    width: 3px;
-    height: 5px;
-  }
-}
-/* HERO BANNER */
-.hero-banner-container {
-  position: relative;
-  height: 390px;
-}
-.hero-banner-container .hero-banner {
-  background-image: url("/images/banners/Header_Image_Mobile_v2.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-  margin-top: 4.5rem;
-}
-.hero-banner-container .copy {
-  background-image: url("/images/banners/Text_Box_Mobile.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: auto;
-  -webkit-transform: skewY(-15deg);
-  transform: skewY(-15deg);
-  padding: 1.8rem 1.5rem 1.95rem 1.5rem;
-  position: absolute;
-  top: 8%;
-  left: 0;
-}
-.hero-banner-container .copy h1, .hero-banner-container .copy h3 {
-  text-align: left;
-}
-.hero-banner-container .copy h1 {
-  font-size: 3.3rem;
-  line-height: 2.9rem;
-  margin: 0;
-  margin-bottom: calc(0.75rem - 12px);
-}
-.hero-banner-container .copy h3 {
-  font-size: 1.4rem;
-  line-height: 1.4rem;
-}
-.hero-banner-container .key-terms {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-}
-.hero-banner-container .key-terms p {
-  color: #fff;
-  font-size: calc(1rem - 6px);
-  text-align: center;
-}
-
-.hero-cta-container {
-  background-color: #004779;
-  padding: 1.0125rem 0.75rem 1.875rem;
-}
-.hero-cta-container h3 {
-  color: #fff;
-  font-size: calc(1rem + 4px);
-  line-height: calc(1rem + 8px);
-  text-align: center;
-  text-transform: uppercase;
-}
-.hero-cta-container .hero-cta {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  max-width: 400px;
-  margin: 0 auto;
-  padding-top: 1.5rem;
-  padding-bottom: 1.875rem;
-}
-.hero-cta-container .login-cta {
-  text-align: center;
-}
-
-.rg-container {
-  background-color: #FAFF07;
-  padding: 0.75rem;
-}
-.rg-container .rg-img {
-  width: 100%;
-  display: block;
-  margin: 0 auto;
-}
-
-/* MEDIA QUERIES */
-/* 576px BREAKPOINT UP */
-@media (min-width: 576px) {
-  .hero-banner-container {
-    height: 538px;
-  }
-  .hero-banner-container .hero-banner {
-    background-image: url("/images/banners/Header_Image_Desktop_v2.jpg");
-    margin-top: 4.7775rem;
-  }
-  .hero-banner-container .copy {
-    background-image: url("/images/banners/Text_Box_Desktop.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 2.475rem;
-  }
-  .hero-banner-container .copy h1 {
-    font-size: 5.5rem;
-    line-height: 5rem;
-  }
-  .hero-banner-container .copy h3 {
-    font-size: 2.2rem;
-    line-height: 2.2rem;
-  }
-  .hero-banner-container .key-terms {
-    bottom: 10%;
-  }
-  .hero-banner-container .key-terms p {
-    font-size: calc(1rem - 2px);
-  }
-
-  .hero-cta-container {
-    padding: 0 1.5rem 3.375rem;
-    position: relative;
-  }
-  .hero-cta-container h3 {
-    font-size: 1.8rem;
-    line-height: calc(2rem + 4px);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -10%;
-  }
-  .hero-cta-container .hero-cta {
-    padding-top: 3.225rem;
-    max-width: 550px;
-  }
-  .hero-cta-container .login-cta {
-    padding-top: 0.9rem;
-  }
-
-  .rg-container .rg-img {
-    height: 48px;
-  }
-}
-/* 767.98px BREAKPOINT DOWN */
-@media (max-width: 767.98px) {
-  .rg-container .rg-img {
-    height: 27px;
-  }
-}
-/* 360px BREAKPOINT DOWN */
-@media (max-width: 360px) {
-  .hero-banner-container .hero-banner {
-    margin-top: 3.525rem;
-  }
-  .hero-banner-container .copy h1 {
-    font-size: 2.5rem;
-    line-height: 2.2rem;
-  }
-  .hero-banner-container .copy h3 {
-    font-size: 1rem;
-    line-height: 1rem;
-  }
-
-  .hero-cta-container .hero-cta {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    text-align: center;
-    max-width: 240px;
-  }
-}
-/* SAMSUNG GALAXY S SERIES  - LANDSCAPE */
-@media only screen and (max-device-width: 915px) and (min-device-height: 360px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-banner-container {
-    height: 515px;
-  }
-  .hero-banner-container .copy h1 {
-    font-size: 4.3rem;
-    line-height: 3.9rem;
-  }
-  .hero-banner-container .copy h3 {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
-  }
-}
-/* IPHONE 11 TO 13 PRO MAX  - LANDSCAPE */
-@media only screen and (min-device-width: 926px) and (min-device-height: 375px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
-  .hero-banner-container {
-    height: 525px;
-  }
-  .hero-banner-container .copy h1 {
-    font-size: 4.3rem;
-    line-height: 3.9rem;
-  }
-  .hero-banner-container .copy h3 {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
-  }
-}
-/* IPHONE 11 TO 13 PRO MAX  - PORTRAIT */
-@media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-banner-container {
-    height: 445px;
-  }
-}
-/* IPHONE SE - LANDSCAPE */
-@media only screen and (device-width: 667px) and (device-height: 375px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-banner-container {
-    height: 390px;
-  }
-  .hero-banner-container .copy h1 {
-    font-size: 3.3rem;
-    line-height: 2.9rem;
-  }
-  .hero-banner-container .copy h3 {
-    font-size: 1.4rem;
-    line-height: 1.4rem;
-  }
-}
-/* TABLET 428PX MIN 860PX MAX - PORTRAIT */
-@media only screen and (min-device-width: 428px) and (max-device-width: 860px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-banner-container {
-    height: 600px;
-  }
-  .hero-banner-container .copy {
-    padding: 2.475rem;
-  }
-  .hero-banner-container .copy h1 {
-    font-size: 4.3rem;
-    line-height: 3.9rem;
-  }
-  .hero-banner-container .copy h3 {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
-  }
-}
-/* SURFACE DUO TABLET - PORTRAIT */
-@media only screen and (device-width: 540px) and (device-height: 720px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-banner-container {
-    height: 570px;
-  }
-  .hero-banner-container .copy h1 {
-    font-size: 4.3rem;
-    line-height: 3.9rem;
-  }
-  .hero-banner-container .copy h3 {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
-  }
-}
-/* SURFACE DUO TABLET - LANDSCAPE */
-@media only screen and (device-width: 720px) and (device-height: 540px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-banner-container .copy h1 {
-    font-size: 3.3rem;
-    line-height: 2.9rem;
-  }
-  .hero-banner-container .copy h3 {
-    font-size: 1.4rem;
-    line-height: 1.4rem;
-  }
-}
-/* SURFACE PRO 7 - PORTRAIT */
-@media only screen and (device-width: 912px) and (device-height: 1368px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-banner-container {
-    height: 515px;
-  }
-}
-/* MOBILE 320PX - LANDSCAPE */
-@media only screen and (device-width: 860px) and (device-height: 320px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-banner-container .copy h1 {
-    font-size: 5rem;
-    line-height: 4.5rem;
-  }
-  .hero-banner-container .copy h3 {
-    font-size: 2rem;
-    line-height: 2rem;
-  }
-}
-/* GALAXY FOLD - LANDSCAPE */
-@media only screen and (device-width: 653px) and (device-height: 280px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-banner-container {
-    height: 390px;
-  }
-  .hero-banner-container .copy h1 {
-    font-size: 3.3rem;
-    line-height: 2.9rem;
-  }
-  .hero-banner-container .copy h3 {
-    font-size: 1.4rem;
-    line-height: 1.4rem;
-  }
-}
-/* IMPORT GOOGLE FONT */
 /* BUTTON */
 .splash-btn {
   text-decoration: none;
@@ -434,6 +96,20 @@ img {
   font-family: "Rubik", sans-serif;
   -webkit-transition: 0.15s ease-in-out;
   transition: 0.15s ease-in-out;
+}
+@media (min-width: 576px) {
+  .splash-btn {
+    font-size: calc(1rem + 2px);
+    padding: 0.825rem 3.15rem;
+  }
+}
+@media (max-width: 360px) {
+  .splash-btn {
+    margin-bottom: 0.9rem;
+  }
+  .splash-btn:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .dark-lemon-lime {
@@ -450,126 +126,515 @@ img {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+@media (min-width: 576px) {
+  .transparent {
+    font-size: calc(1rem - 2px);
+    padding: 0.9rem 1.2rem;
+  }
+}
 .transparent:hover {
   color: #212529;
   background-color: #E2E6EA;
   border: 1px solid #E2E6EA;
 }
 
-/* MEDIA QUERIES */
-/* 576px BREAKPOINT UP */
+/* HERO BANNER */
+.hero-banner-container {
+  position: relative;
+  height: 390px;
+  /* SAMSUNG GALAXY S SERIES  - LANDSCAPE */
+  /* IPHONE 11 TO 13 PRO MAX  - LANDSCAPE */
+  /* IPHONE 11 TO 13 PRO MAX  - PORTRAIT */
+  /* IPHONE SE - LANDSCAPE */
+  /* TABLET 428PX MIN 860PX MAX - PORTRAIT */
+  /* SURFACE DUO TABLET - PORTRAIT */
+  /* SURFACE PRO 7 - PORTRAIT */
+  /* GALAXY FOLD - LANDSCAPE */
+}
 @media (min-width: 576px) {
-  .splash-btn {
-    font-size: calc(1rem + 2px);
-    padding: 0.825rem 3.15rem;
-  }
-
-  .transparent {
-    font-size: calc(1rem - 2px);
-    padding: 0.9rem 1.2rem;
+  .hero-banner-container {
+    height: 538px;
   }
 }
-/* 360px BREAKPOINT DOWN */
+@media only screen and (max-device-width: 915px) and (min-device-height: 360px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container {
+    height: 515px;
+  }
+}
+@media only screen and (min-device-width: 926px) and (min-device-height: 375px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
+  .hero-banner-container {
+    height: 525px;
+  }
+}
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container {
+    height: 445px;
+  }
+}
+@media only screen and (device-width: 667px) and (device-height: 375px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container {
+    height: 390px;
+  }
+}
+@media only screen and (min-device-width: 428px) and (max-device-width: 860px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container {
+    height: 600px;
+  }
+}
+@media only screen and (device-width: 540px) and (device-height: 720px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container {
+    height: 570px;
+  }
+}
+@media only screen and (device-width: 912px) and (device-height: 1368px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container {
+    height: 515px;
+  }
+}
+@media only screen and (device-width: 653px) and (device-height: 280px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container {
+    height: 390px;
+  }
+}
+.hero-banner-container .hero-banner {
+  background-image: url("/assets/banners/Header_Image_Mobile_v2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  margin-top: 4.5rem;
+}
+@media (min-width: 576px) {
+  .hero-banner-container .hero-banner {
+    background-image: url("/assets/banners/Header_Image_Desktop_v2.jpg");
+    margin-top: 4.7775rem;
+  }
+}
 @media (max-width: 360px) {
-  .splash-btn {
-    margin-bottom: 1.875rem;
-  }
-  .splash-btn:last-child {
-    margin-bottom: 0;
+  .hero-banner-container .hero-banner {
+    margin-top: 3.525rem;
   }
 }
-/* SECTION 1 */
-.sports, .casino {
-  background-color: #fff;
-  padding: 1.125rem 1.5rem 1.125rem;
+.hero-banner-container .copy {
+  background-image: url("/assets/banners/Text_Box_Mobile.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: auto;
+  -webkit-transform: skewY(-15deg);
+  transform: skewY(-15deg);
+  padding: 1.8rem 1.5rem 1.95rem 1.5rem;
+  position: absolute;
+  top: 8%;
+  left: 0;
+  /* TABLET 428PX MIN 860PX MAX - PORTRAIT */
 }
-.sports .item, .casino .item {
-  -ms-flex-preferred-size: 25%;
-  flex-basis: 25%;
-  margin-bottom: 1.5rem;
+@media (min-width: 576px) {
+  .hero-banner-container .copy {
+    background-image: url("/assets/banners/Text_Box_Desktop.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 2.475rem;
+  }
+}
+@media only screen and (min-device-width: 428px) and (max-device-width: 860px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy {
+    padding: 2.475rem;
+  }
+}
+.hero-banner-container .copy h1, .hero-banner-container .copy h3 {
+  text-align: left;
+}
+.hero-banner-container .copy h1 {
+  font-size: 3.3rem;
+  line-height: 2.9rem;
+  margin: 0;
+  margin-bottom: calc(0.75rem - 12px);
+  /* SAMSUNG GALAXY S SERIES  - LANDSCAPE */
+  /* IPHONE 11 TO 13 PRO MAX  - LANDSCAPE */
+  /* IPHONE SE - LANDSCAPE */
+  /* TABLET 428PX MIN 860PX MAX - PORTRAIT */
+  /* SURFACE DUO TABLET - PORTRAIT */
+  /* SURFACE DUO TABLET - LANDSCAPE */
+  /* MOBILE 320PX - LANDSCAPE */
+  /* GALAXY FOLD - LANDSCAPE */
+}
+@media (min-width: 576px) {
+  .hero-banner-container .copy h1 {
+    font-size: 5.5rem;
+    line-height: 5rem;
+  }
+}
+@media (max-width: 360px) {
+  .hero-banner-container .copy h1 {
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+  }
+}
+@media only screen and (max-device-width: 915px) and (min-device-height: 360px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h1 {
+    font-size: 4.3rem;
+    line-height: 3.9rem;
+  }
+}
+@media only screen and (min-device-width: 926px) and (min-device-height: 375px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
+  .hero-banner-container .copy h1 {
+    font-size: 4.3rem;
+    line-height: 3.9rem;
+  }
+}
+@media only screen and (device-width: 667px) and (device-height: 375px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h1 {
+    font-size: 3.3rem;
+    line-height: 2.9rem;
+  }
+}
+@media only screen and (min-device-width: 428px) and (max-device-width: 860px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h1 {
+    font-size: 4.3rem;
+    line-height: 3.9rem;
+  }
+}
+@media only screen and (device-width: 540px) and (device-height: 720px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h1 {
+    font-size: 4.3rem;
+    line-height: 3.9rem;
+  }
+}
+@media only screen and (device-width: 720px) and (device-height: 540px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h1 {
+    font-size: 3.3rem;
+    line-height: 2.9rem;
+  }
+}
+@media only screen and (device-width: 860px) and (device-height: 320px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h1 {
+    font-size: 5rem;
+    line-height: 4.5rem;
+  }
+}
+@media only screen and (device-width: 653px) and (device-height: 280px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h1 {
+    font-size: 3.3rem;
+    line-height: 2.9rem;
+  }
+}
+.hero-banner-container .copy h3 {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  /* SAMSUNG GALAXY S SERIES  - LANDSCAPE */
+  /* IPHONE 11 TO 13 PRO MAX  - LANDSCAPE */
+  /* IPHONE SE - LANDSCAPE */
+  /* TABLET 428PX MIN 860PX MAX - PORTRAIT */
+  /* SURFACE DUO TABLET - PORTRAIT */
+  /* SURFACE DUO TABLET - LANDSCAPE */
+  /* MOBILE 320PX - LANDSCAPE */
+  /* GALAXY FOLD - LANDSCAPE */
+}
+@media (min-width: 576px) {
+  .hero-banner-container .copy h3 {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+}
+@media (max-width: 360px) {
+  .hero-banner-container .copy h3 {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+}
+@media only screen and (max-device-width: 915px) and (min-device-height: 360px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h3 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+}
+@media only screen and (min-device-width: 926px) and (min-device-height: 375px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
+  .hero-banner-container .copy h3 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+}
+@media only screen and (device-width: 667px) and (device-height: 375px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h3 {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
+}
+@media only screen and (min-device-width: 428px) and (max-device-width: 860px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h3 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+}
+@media only screen and (device-width: 540px) and (device-height: 720px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h3 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+}
+@media only screen and (device-width: 720px) and (device-height: 540px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h3 {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
+}
+@media only screen and (device-width: 860px) and (device-height: 320px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+@media only screen and (device-width: 653px) and (device-height: 280px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-banner-container .copy h3 {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
+}
+.hero-banner-container .key-terms {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 576px) {
+  .hero-banner-container .key-terms {
+    bottom: 10%;
+  }
+}
+.hero-banner-container .key-terms p {
+  color: #fff;
+  font-size: calc(1rem - 6px);
   text-align: center;
 }
-.sports .item p, .casino .item p {
-  color: #004779;
-  font-size: calc(1rem - 4px);
-}
-.sports .item a, .casino .item a {
-  display: block;
-}
-.sports .item .football-icon, .sports .item .rugby-icon, .sports .item .darts-icon, .sports .item .american-football, .sports .item .basketball, .sports .item .tennis, .sports .item .casino-icon, .sports .item .bingo-icon, .casino .item .football-icon, .casino .item .rugby-icon, .casino .item .darts-icon, .casino .item .american-football, .casino .item .basketball, .casino .item .tennis, .casino .item .casino-icon, .casino .item .bingo-icon {
-  width: 40px;
-  height: 40px;
-}
-.sports .item .golf-icon, .casino .item .golf-icon {
-  width: 36px;
-  height: 40px;
-}
-.sports .item .boxing-icon, .casino .item .boxing-icon {
-  width: 45px;
-  height: 40px;
-}
-.sports .item .gaming-icon, .sports .item .slots-icon, .casino .item .gaming-icon, .casino .item .slots-icon {
-  width: 42px;
-  height: 40px;
-}
-.sports .item .livecasino-icon, .casino .item .livecasino-icon {
-  width: 26px;
-  height: 40px;
-}
-.sports .item .poker-icon, .casino .item .poker-icon {
-  width: 37px;
-  height: 40px;
+@media (min-width: 576px) {
+  .hero-banner-container .key-terms p {
+    font-size: calc(1rem - 2px);
+  }
 }
 
-h1 {
+.hero-cta-container {
+  background-color: #004779;
+  padding: 1.0125rem 0.75rem 1.875rem;
+}
+@media (min-width: 576px) {
+  .hero-cta-container {
+    padding: 0 1.5rem 3.375rem;
+    position: relative;
+  }
+}
+.hero-cta-container h3 {
+  color: #fff;
+  font-size: calc(1rem + 4px);
+  line-height: calc(1rem + 8px);
   text-align: center;
-  font-size: 2.5rem;
-  line-height: 2.2rem;
-  font-family: "Panton Rust Heavy Grunge", sans-serif;
-  margin: 0.75rem;
+  text-transform: uppercase;
 }
-
-.sports .offers {
+@media (min-width: 576px) {
+  .hero-cta-container h3 {
+    font-size: 1.8rem;
+    line-height: calc(2rem + 4px);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10%;
+  }
+}
+.hero-cta-container .hero-cta {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.875rem;
+}
+@media (min-width: 576px) {
+  .hero-cta-container .hero-cta {
+    padding-top: 3.225rem;
+    max-width: 550px;
+  }
+}
+@media (max-width: 360px) {
+  .hero-cta-container .hero-cta {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    max-width: 240px;
+    padding-bottom: 0.9rem;
+  }
+}
+.hero-cta-container .login-cta {
+  text-align: center;
+}
+@media (min-width: 576px) {
+  .hero-cta-container .login-cta {
+    padding-top: 0.9rem;
+  }
+}
+
+.rg-container {
+  background-color: #FAFF07;
+  padding: 0.75rem;
+}
+.rg-container .rg-img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+@media (min-width: 576px) {
+  .rg-container .rg-img {
+    height: 48px;
+  }
+}
+@media (max-width: 767.98px) {
+  .rg-container .rg-img {
+    height: 27px;
+  }
+}
+
+/* HEADER */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.header {
+  background-color: #004779;
+  padding: 1.5rem;
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 1.125rem;
+  }
+}
+@media (max-width: 360px) {
+  .header {
+    padding: 0.975rem;
+  }
+}
+.header .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #004779;
+}
+.header .logo {
+  width: 132px;
+  height: 21px;
+}
+@media (min-width: 768px) {
+  .header .logo {
+    width: 222px;
+    height: 35px;
+  }
+}
+@media (max-width: 360px) {
+  .header .logo {
+    width: 80%;
+  }
+}
+.header .login-cta {
+  color: #fff;
+  font-size: calc(1rem - 6px);
+  border: 1px solid #fff;
   border-radius: 5px;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  text-transform: uppercase;
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
-.sports .img-1 {
-  background-image: url("/images/sports/FSS.jpg");
+@media (min-width: 768px) {
+  .header .login-cta {
+    font-size: calc(1rem - 2px);
+    padding: 0.6rem 0.975rem;
+  }
 }
-.sports .img-2 {
-  background-image: url("/images/sports/RSS.jpg");
+@media (max-width: 360px) {
+  .header .login-cta {
+    font-size: calc(1rem - 9px);
+  }
 }
-.sports .img-3 {
-  background-image: url("/images/sports/BYB.jpg");
+.header .login-cta:hover {
+  color: #212529;
+  background-color: #E2E6EA;
+  border: 1px solid #E2E6EA;
 }
-.sports .img-4 {
-  background-image: url("/images/sports/FTF.jpg");
+.header .login-cta:hover .next-icon {
+  fill: #212529;
+}
+.header .next-icon {
+  width: 8px;
+  height: 8px;
+  padding-left: 3px;
+  fill: #fff;
+}
+@media (min-width: 768px) {
+  .header .next-icon {
+    width: 15px;
+    height: 11px;
+    padding-left: calc(0.75rem - 4px);
+  }
+}
+@media (max-width: 360px) {
+  .header .next-icon {
+    width: 7px;
+    height: 5px;
+  }
 }
 
-.img-1, .img-2, .img-3, .img-4 {
+/* OFFERS */
+@media (min-width: 992px) {
+  .sports .offers, .casino .offers {
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+}
+.sports .img-1, .sports .img-2, .sports .img-3, .sports .img-4, .casino .img-1, .casino .img-2, .casino .img-3, .casino .img-4 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 200px;
   width: 100%;
 }
+@media (min-width: 576px) {
+  .sports .img-1, .sports .img-2, .sports .img-3, .sports .img-4, .casino .img-1, .casino .img-2, .casino .img-3, .casino .img-4 {
+    -ms-flex-preferred-size: 40%;
+    flex-basis: 40%;
+  }
+}
 
 .details {
   padding: 1.275rem 1.125rem;
   text-align: center;
+}
+@media (min-width: 992px) {
+  .details {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media (min-width: 576px) {
+  .details {
+    -ms-flex-preferred-size: 60%;
+    flex-basis: 60%;
+    text-align: left;
+  }
 }
 .details p, .details h2, .details h3 {
   color: #fff;
@@ -589,25 +654,88 @@ h1 {
   line-height: 1.9rem;
   margin-bottom: calc(0.75rem - 10px);
 }
+@media (min-width: 992px) {
+  .details h2 {
+    font-size: calc(2rem + 4px);
+    line-height: calc(2rem + 2px);
+    margin-bottom: calc(0.75rem - 7px);
+  }
+}
+@media (min-width: 576px) {
+  .details h2 {
+    text-align: left;
+  }
+}
 .details h3 {
   font-size: 1.2rem;
   line-height: 1.5rem;
 }
+@media (min-width: 992px) {
+  .details h3 {
+    font-size: calc(1rem + 8px);
+  }
+}
 .details .key-terms {
   display: block;
   color: #fff;
-  font-size: calc(1rem - 5px);
+  font-size: calc(1rem - 7px);
   text-decoration: underline;
   text-underline-offset: 3px;
   margin-top: 0.825rem;
+}
+@media (min-width: 992px) {
+  .details .key-terms {
+    font-size: calc(1rem - 6px);
+    margin-top: 1.875rem;
+  }
 }
 .details .key-terms:hover {
   color: #d9d9d9;
 }
 
+.sports-offer img, .casino-offer img {
+  height: 250px;
+  width: 100%;
+  display: block;
+}
+@media (min-width: 992px) {
+  .sports-offer img, .casino-offer img {
+    height: auto;
+  }
+}
+@media (min-width: 576px) {
+  .sports-offer img, .casino-offer img {
+    height: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .show-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .show-desktop {
+    display: block;
+  }
+}
+@media (max-width: 991.98px) {
+  .show-desktop {
+    display: none;
+  }
+}
+
+/* MARKETS */
 .markets-container {
   margin-top: 2.25rem;
   margin-bottom: 0.825rem;
+}
+@media (min-width: 992px) {
+  .markets-container {
+    margin-top: 6rem;
+    margin-bottom: 0;
+  }
 }
 
 .markets {
@@ -624,19 +752,161 @@ h1 {
   color: #004779;
   text-align: center;
 }
-
-h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
+@media (min-width: 992px) {
+  .markets p {
+    font-size: calc(1rem + 2px);
+  }
 }
 
-.sports-offer img, .casino-offer img {
-  height: 250px;
-  width: 100%;
+.sports .item, .casino .item {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.sports .item p, .casino .item p {
+  color: #004779;
+  font-size: calc(1rem - 4px);
+}
+@media (min-width: 992px) {
+  .sports .item, .casino .item {
+    margin-bottom: 3rem;
+  }
+}
+@media (min-width: 992px) {
+  .sports .item p, .casino .item p {
+    font-size: calc(1rem + 2px);
+    margin-top: 0.75rem;
+  }
+}
+.sports .item a, .casino .item a {
   display: block;
 }
+.sports .item .football-icon, .sports .item .rugby-icon, .sports .item .darts-icon, .sports .item .american-football, .sports .item .basketball, .sports .item .tennis, .sports .item .casino-icon, .sports .item .bingo-icon, .casino .item .football-icon, .casino .item .rugby-icon, .casino .item .darts-icon, .casino .item .american-football, .casino .item .basketball, .casino .item .tennis, .casino .item .casino-icon, .casino .item .bingo-icon {
+  width: 40px;
+  height: 40px;
+}
+@media (min-width: 992px) {
+  .sports .item .football-icon, .sports .item .darts-icon, .sports .item .basketball, .sports .item .casino-icon, .sports .item .bingo-icon, .casino .item .football-icon, .casino .item .darts-icon, .casino .item .basketball, .casino .item .casino-icon, .casino .item .bingo-icon {
+    width: 79px;
+    height: 79px;
+  }
+}
+@media (min-width: 992px) {
+  .sports .item .rugby-icon, .sports .item .american-football, .casino .item .rugby-icon, .casino .item .american-football {
+    width: 81px;
+    height: 80px;
+  }
+}
+@media (min-width: 992px) {
+  .sports .item .tennis, .casino .item .tennis {
+    width: 80px;
+    height: 79px;
+  }
+}
+.sports .item .golf-icon, .casino .item .golf-icon {
+  width: 36px;
+  height: 40px;
+}
+@media (min-width: 992px) {
+  .sports .item .golf-icon, .casino .item .golf-icon {
+    width: 70px;
+    height: 80px;
+  }
+}
+.sports .item .boxing-icon, .casino .item .boxing-icon {
+  width: 45px;
+  height: 40px;
+}
+@media (min-width: 992px) {
+  .sports .item .boxing-icon, .casino .item .boxing-icon {
+    width: 89px;
+    height: 79px;
+  }
+}
+.sports .item .gaming-icon, .sports .item .slots-icon, .casino .item .gaming-icon, .casino .item .slots-icon {
+  width: 42px;
+  height: 40px;
+}
+@media (min-width: 992px) {
+  .sports .item .gaming-icon, .casino .item .gaming-icon {
+    width: 83px;
+    height: 79px;
+  }
+}
+@media (min-width: 992px) {
+  .sports .item .slots-icon, .casino .item .slots-icon {
+    width: 81px;
+    height: 79px;
+  }
+}
+.sports .item .livecasino-icon, .casino .item .livecasino-icon {
+  width: 26px;
+  height: 40px;
+}
+@media (min-width: 992px) {
+  .sports .item .livecasino-icon, .casino .item .livecasino-icon {
+    width: 50px;
+    height: 79px;
+  }
+}
+.sports .item .poker-icon, .casino .item .poker-icon {
+  width: 37px;
+  height: 40px;
+}
+@media (min-width: 992px) {
+  .sports .item .poker-icon, .casino .item .poker-icon {
+    width: 72px;
+    height: 79px;
+  }
+}
 
-/* SECTION 2 */
+@media (min-width: 992px) {
+  .casino .item:nth-child(5), .casino .item:nth-child(6) {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* SPORTS */
+.sports .offers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #004779;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+@media (min-width: 576px) {
+  .sports .offers {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+.sports .img-1 {
+  background-image: url("/assets/sports/FSS.jpg");
+}
+.sports .img-2 {
+  background-image: url("/assets/sports/RSS.jpg");
+}
+.sports .img-3 {
+  background-image: url("/assets/sports/BYB.jpg");
+}
+.sports .img-4 {
+  background-image: url("/assets/sports/FTF.jpg");
+}
+
+/* CASINO */
 .casino .offers {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -654,44 +924,41 @@ h2 {
   margin-bottom: 1.5rem;
   overflow: hidden;
 }
+@media (min-width: 576px) {
+  .casino .offers {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
 .casino .img-1 {
-  background-image: url("/images/casino/Rewards_Grabber.jpg");
+  background-image: url("/assets/casino/Rewards_Grabber.jpg");
 }
 .casino .img-2 {
-  background-image: url("/images/casino/Sport_Slot.jpg");
+  background-image: url("/assets/casino/Sport_Slot.jpg");
 }
 .casino .img-3 {
-  background-image: url("/images/casino/Slots_Tournaments.jpg");
-}
-
-.is-scrollable {
-  overflow-x: scroll;
-}
-
-.is-scrollable::-webkit-scrollbar {
-  height: 5px;
-}
-
-.is-scrollable::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
-  border-radius: 5px;
-}
-
-.is-scrollable::-webkit-scrollbar-thumb {
-  background-color: #bfbfbf;
-  border-radius: 5px;
-}
-
-.is-scrollable::-webkit-scrollbar-thumb:hover {
-  background-color: #ababab;
+  background-image: url("/assets/casino/Slots_Tournaments.jpg");
 }
 
 .slots-games-container h2 {
   margin-top: 3rem;
 }
+@media (min-width: 992px) {
+  .slots-games-container h2 {
+    margin-top: 3.75rem;
+    margin-bottom: 3.75rem;
+  }
+}
 
 .slots-games {
   width: 1600px;
+}
+@media (min-width: 576px) {
+  .slots-games {
+    width: 2600px;
+  }
 }
 .slots-games .item {
   display: -webkit-box;
@@ -701,17 +968,58 @@ h2 {
   -moz-column-gap: 10px;
   column-gap: 10px;
 }
+@media (min-width: 992px) {
+  .slots-games .item {
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    margin-bottom: 1.5rem;
+  }
+}
 .slots-games img {
   display: block;
   width: 200px;
   height: auto;
   border-radius: calc(5px - 2px);
 }
+@media (min-width: 992px) {
+  .slots-games img {
+    width: 500px;
+  }
+}
 
-/* SECTION 3 */
+.is-scrollable {
+  overflow-x: scroll;
+}
+.is-scrollable::-webkit-scrollbar {
+  height: 5px;
+}
+@media (min-width: 992px) {
+  .is-scrollable::-webkit-scrollbar {
+    height: 10px;
+  }
+}
+.is-scrollable::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+.is-scrollable::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 5px;
+}
+.is-scrollable::-webkit-scrollbar-thumb:hover {
+  background-color: #ababab;
+}
+
+/* SEO */
 .seo {
   background-color: #6E6E6E;
   padding: 1.5rem;
+}
+@media (min-width: 768px) {
+  .seo {
+    padding: 3rem 2.625rem;
+  }
 }
 
 .seo-container {
@@ -738,196 +1046,29 @@ h2 {
   font-size: calc(1rem - 2px);
   margin-bottom: 1.125rem;
 }
+@media (min-width: 768px) {
+  .seo-container .item h3 {
+    font-size: 1rem;
+  }
+}
 .seo-container .item p {
   font-size: calc(1rem - 4px);
   margin-bottom: calc(0.75rem - 5px);
   font-weight: 300;
 }
+@media (min-width: 768px) {
+  .seo-container .item p {
+    font-size: calc(1rem - 2px);
+  }
+}
 .seo-container .item p:last-child {
   margin-bottom: 0;
 }
 .seo-container .item a {
+  color: #E3E3E3;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .seo-container .item a:hover {
   color: #cacaca;
-}
-
-/* MEDIA QUERIES */
-/* 992px BREAKPOINT UP */
-@media (min-width: 992px) {
-  .sports, .casino {
-    padding: 4.5rem 2.5125rem 2.625rem;
-  }
-  .sports .item, .casino .item {
-    margin-bottom: 3rem;
-  }
-  .sports .item p, .casino .item p {
-    font-size: calc(1rem + 2px);
-    margin-top: 0.75rem;
-  }
-  .sports .item .football-icon, .sports .item .darts-icon, .sports .item .basketball, .sports .item .casino-icon, .sports .item .bingo-icon, .casino .item .football-icon, .casino .item .darts-icon, .casino .item .basketball, .casino .item .casino-icon, .casino .item .bingo-icon {
-    width: 79px;
-    height: 79px;
-  }
-  .sports .item .rugby-icon, .sports .item .american-football, .casino .item .rugby-icon, .casino .item .american-football {
-    width: 81px;
-    height: 80px;
-  }
-  .sports .item .tennis, .casino .item .tennis {
-    width: 80px;
-    height: 79px;
-  }
-  .sports .item .golf-icon, .casino .item .golf-icon {
-    width: 70px;
-    height: 80px;
-  }
-  .sports .item .boxing-icon, .casino .item .boxing-icon {
-    width: 89px;
-    height: 79px;
-  }
-  .sports .item .gaming-icon, .casino .item .gaming-icon {
-    width: 83px;
-    height: 79px;
-  }
-  .sports .item .slots-icon, .casino .item .slots-icon {
-    width: 81px;
-    height: 79px;
-  }
-  .sports .item .livecasino-icon, .casino .item .livecasino-icon {
-    width: 50px;
-    height: 79px;
-  }
-  .sports .item .poker-icon, .casino .item .poker-icon {
-    width: 72px;
-    height: 79px;
-  }
-
-  .casino .item:nth-child(5), .casino .item:nth-child(6) {
-    margin-bottom: 0.75rem;
-  }
-
-  h1 {
-    font-size: 4rem;
-    line-height: 3.5rem;
-    margin: 0;
-    margin-bottom: 3.75rem;
-  }
-
-  .sports .offers, .casino .offers {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
-  }
-
-  .details {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  .details h2 {
-    font-size: calc(2rem + 4px);
-    line-height: calc(2rem + 2px);
-    margin-bottom: calc(0.75rem - 7px);
-  }
-  .details h3 {
-    font-size: calc(1rem + 8px);
-  }
-  .details .key-terms {
-    font-size: calc(1rem - 6px);
-    margin-top: 1.875rem;
-  }
-
-  .slots-games-container h2 {
-    margin-top: 3.75rem;
-    margin-bottom: 3.75rem;
-  }
-
-  .slots-games img {
-    width: 500px;
-  }
-  .slots-games .item {
-    -webkit-column-gap: 20px;
-    -moz-column-gap: 20px;
-    column-gap: 20px;
-    margin-bottom: 1.5rem;
-  }
-
-  .is-scrollable::-webkit-scrollbar {
-    height: 10px;
-  }
-
-  h2 {
-    font-size: calc(2rem + 4px);
-    margin-bottom: 2.25rem;
-  }
-
-  .markets-container {
-    margin-top: 6rem;
-    margin-bottom: 0;
-  }
-
-  .markets p {
-    font-size: calc(1rem + 2px);
-  }
-
-  .show-mobile {
-    display: none;
-  }
-}
-/* 768px BREAKPOINT UP */
-@media (min-width: 768px) {
-  .show-desktop {
-    display: block;
-  }
-
-  .sports-offer .show-desktop img, .casino-offer .show-desktop img {
-    height: auto;
-  }
-
-  .seo {
-    padding: 3rem 2.625rem;
-  }
-
-  .seo-container .item h3 {
-    font-size: 1rem;
-  }
-  .seo-container .item p {
-    font-size: calc(1rem - 2px);
-  }
-}
-/* 576px BREAKPOINT UP */
-@media (min-width: 576px) {
-  .sports .offers, .casino .offers {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
-  .sports .img-1, .sports .img-2, .sports .img-3, .sports .img-4, .casino .img-1, .casino .img-2, .casino .img-3, .casino .img-4 {
-    -ms-flex-preferred-size: 40%;
-    flex-basis: 40%;
-  }
-
-  .details {
-    -ms-flex-preferred-size: 60%;
-    flex-basis: 60%;
-    text-align: left;
-  }
-  .details h2 {
-    text-align: left;
-  }
-
-  .slots-games {
-    width: 2600px;
-  }
-
-  .sports-offer .show-mobile img, .casino-offer .show-mobile img {
-    height: auto;
-  }
-}
-/* 991.98px BREAKPOINT DOWN */
-@media (max-width: 991.98px) {
-  .show-desktop {
-    display: none;
-  }
 }

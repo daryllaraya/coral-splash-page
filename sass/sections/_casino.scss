@@ -1,0 +1,86 @@
+@use 'abstracts' as *;
+
+/* CASINO */
+.casino {
+  .offers {
+    @include offers;
+  }
+
+  .img-1 {
+    background-image: url('/assets/casino/Rewards_Grabber.jpg');
+  }
+  
+  .img-2 {
+    background-image: url('/assets/casino/Sport_Slot.jpg');
+  }
+  
+  .img-3 {
+    background-image: url('/assets/casino/Slots_Tournaments.jpg');
+  }
+}
+
+.slots-games-container {
+  h2 {
+    margin-top: $base-margin * 4;
+
+    @include lg-up {
+      margin-top: $base-margin * 5;
+      margin-bottom: $base-margin * 5;
+    }
+  }
+}
+
+.slots-games {
+  width: 1600px;
+
+  @include sm-up {
+    width: 2600px;
+  }
+  
+  .item {
+    display: flex;
+    column-gap: 10px;
+
+    @include lg-up {
+      column-gap: 20px;
+      margin-bottom: $base-margin * 2;
+    }
+  }
+
+  img {
+    display: block;
+    width: 200px;
+    height: auto;
+    border-radius: calc(#{$base-border-radius} - 2px);
+
+    @include lg-up {
+      width: 500px;
+    }
+  }
+}
+
+.is-scrollable {
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    height: 5px;
+
+    @include lg-up {
+      height: 10px;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: $base-border-radius;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #bfbfbf;
+    border-radius: $base-border-radius;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #ababab; 
+  }
+}
